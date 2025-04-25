@@ -1045,79 +1045,79 @@ using u64x16 = vec<u64, 16>;
 using u64x32 = vec<u64, 32>;
 using u64x64 = vec<u64, 64>;
 
-namespace glsl_names
-{
-using vec2  = f32x2;
-using vec3  = f32x3;
-using vec4  = f32x4;
-using dvec2 = f64x2;
-using dvec3 = f64x3;
-using dvec4 = f64x4;
-using ivec2 = i32x2;
-using ivec3 = i32x3;
-using ivec4 = i32x4;
-using uvec2 = u32x2;
-using uvec3 = u32x3;
-using uvec4 = u32x4;
-} // namespace glsl_names
-namespace opencl_names
-{
-using char2   = i8x2;
-using char3   = i8x3;
-using char4   = i8x4;
-using char8   = i8x8;
-using char16  = i8x16;
-using uchar2  = u8x2;
-using uchar3  = u8x3;
-using uchar4  = u8x4;
-using uchar8  = u8x8;
-using uchar16 = u8x16;
+// namespace glsl_names
+// {
+// using vec2  = f32x2;
+// using vec3  = f32x3;
+// using vec4  = f32x4;
+// using dvec2 = f64x2;
+// using dvec3 = f64x3;
+// using dvec4 = f64x4;
+// using ivec2 = i32x2;
+// using ivec3 = i32x3;
+// using ivec4 = i32x4;
+// using uvec2 = u32x2;
+// using uvec3 = u32x3;
+// using uvec4 = u32x4;
+// } // namespace glsl_names
+// namespace opencl_names
+// {
+// using char2   = i8x2;
+// using char3   = i8x3;
+// using char4   = i8x4;
+// using char8   = i8x8;
+// using char16  = i8x16;
+// using uchar2  = u8x2;
+// using uchar3  = u8x3;
+// using uchar4  = u8x4;
+// using uchar8  = u8x8;
+// using uchar16 = u8x16;
 
-using short2   = i16x2;
-using short3   = i16x3;
-using short4   = i16x4;
-using short8   = i16x8;
-using short16  = i16x16;
-using ushort2  = u16x2;
-using ushort3  = u16x3;
-using ushort4  = u16x4;
-using ushort8  = u16x8;
-using ushort16 = u16x16;
+// using short2   = i16x2;
+// using short3   = i16x3;
+// using short4   = i16x4;
+// using short8   = i16x8;
+// using short16  = i16x16;
+// using ushort2  = u16x2;
+// using ushort3  = u16x3;
+// using ushort4  = u16x4;
+// using ushort8  = u16x8;
+// using ushort16 = u16x16;
 
-using int2   = i32x2;
-using int3   = i32x3;
-using int4   = i32x4;
-using int8   = i32x8;
-using int16  = i32x16;
-using uint2  = u32x2;
-using uint3  = u32x3;
-using uint4  = u32x4;
-using uint8  = u32x8;
-using uint16 = u32x16;
+// using int2   = i32x2;
+// using int3   = i32x3;
+// using int4   = i32x4;
+// using int8   = i32x8;
+// using int16  = i32x16;
+// using uint2  = u32x2;
+// using uint3  = u32x3;
+// using uint4  = u32x4;
+// using uint8  = u32x8;
+// using uint16 = u32x16;
 
-using long2   = i64x2;
-using long3   = i64x3;
-using long4   = i64x4;
-using long8   = i64x8;
-using long16  = i64x16;
-using ulong2  = u64x2;
-using ulong3  = u64x3;
-using ulong4  = u64x4;
-using ulong8  = u64x8;
-using ulong16 = u64x16;
+// using long2   = i64x2;
+// using long3   = i64x3;
+// using long4   = i64x4;
+// using long8   = i64x8;
+// using long16  = i64x16;
+// using ulong2  = u64x2;
+// using ulong3  = u64x3;
+// using ulong4  = u64x4;
+// using ulong8  = u64x8;
+// using ulong16 = u64x16;
 
-using float2  = f32x2;
-using float3  = f32x3;
-using float4  = f32x4;
-using float8  = f32x8;
-using float16 = f32x16;
+// using float2  = f32x2;
+// using float3  = f32x3;
+// using float4  = f32x4;
+// using float8  = f32x8;
+// using float16 = f32x16;
 
-using double2  = f64x2;
-using double3  = f64x3;
-using double4  = f64x4;
-using double8  = f64x8;
-using double16 = f64x16;
-} // namespace opencl_names
+// using double2  = f64x2;
+// using double3  = f64x3;
+// using double4  = f64x4;
+// using double8  = f64x8;
+// using double16 = f64x16;
+// } // namespace opencl_names
 
 namespace internal
 {
@@ -1295,7 +1295,7 @@ void test_function1(cint_t<Cat> cat, Fn&& fn, RefFn&& reffn, IsApplicable&& isap
                       }
                   });
 
-    testo::matrix(named("type") = test_catogories::types(cint<Cat & ~1>),
+    testo::matrix(named("type") = test_catogories::types(cint < Cat & ~1 >),
                   [&](auto type)
                   {
                       using T   = typename decltype(type)::type;
@@ -1330,7 +1330,7 @@ void test_function2(cint_t<Cat> cat, Fn&& fn, RefFn&& reffn, IsApplicable&& isap
             }
         });
 
-    testo::matrix(named("type") = test_catogories::types(cint<Cat & ~1>),
+    testo::matrix(named("type") = test_catogories::types(cint < Cat & ~1 >),
                   [&](auto type)
                   {
                       using T    = typename decltype(type)::type;
